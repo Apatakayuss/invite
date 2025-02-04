@@ -59,8 +59,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>🎉 You're Invited! 🎉</h1>
-        <p>We're getting married on May 3rd, and we'd love for you to join us!</p>
+        <h1>🎉 Hello there 🎉</h1>
+        <p>I have a special message to share</p>
 
         {/* Name Input Form */}
         <form onSubmit={handleNameSubmit}>
@@ -85,7 +85,7 @@ function App() {
 
         {/* Email Invitation Form (Only shown after the message is displayed) */}
         {showEmailForm && (
-          <form onSubmit={handleEmailSubmit}>
+          <form className='invite' onSubmit={handleEmailSubmit}>
             <label>
               Enter your email to receive an invitation:
               <input
