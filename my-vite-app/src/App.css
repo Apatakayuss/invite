@@ -1,9 +1,11 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: 'Georgia', serif; /* Elegant serif font */
-  background-color: #f7f3e9; /* Soft cream background */
-  color: #333; /* Dark text for contrast */
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif; 
+  background-color: #8ffa6563; 
+  color: #333; 
 }
 
 .App {
