@@ -4,7 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Georgia', serif; 
-  background-color: #8ffa6563; 
+  background-color: #f7f3e9;
   color: #333; 
   display: flex;
   justify-content: center;
@@ -21,6 +21,7 @@ body {
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
+  background-color: #f7f3e9;
 }
 
 /* Header Styles */
@@ -126,6 +127,9 @@ label {
   margin-top: 25px;
 }
 
+.message-box{
+  padding: 0 15px;
+}
 .message-box::before {
   content: "❤️"; /* Heart symbol as a decorative element */
   position: absolute;
