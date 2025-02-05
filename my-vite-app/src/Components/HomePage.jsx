@@ -1,6 +1,7 @@
-// src/components/HomePage.js
+// src/components/HomePage.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
+// import './HomePage.css'; 
 
 const HomePage = () => {
   const [name, setName] = useState('');
@@ -30,30 +31,41 @@ const HomePage = () => {
 
     const selectedMessage = personalizedMessages[enteredName] || fallbackMessage(enteredName);
     setMessage(selectedMessage);
-    setShowMessage(true); // Show the message and enable the "View Our Journey" link
+    setShowMessage(true);
     setShowEmailForm(true);
   };
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
+
     if (!email) {
       alert('Please enter a valid email address.');
       return;
     }
-    sendEmailInvite(email);
-    alert(`Invitation sent to ${email}!`);
-    setEmail('');
-  };
 
-  const sendEmailInvite = (recipientEmail) => {
-    console.log(`Simulating email sent to: ${recipientEmail}`);
+    // Send email using EmailJS
+    emailjs
+      .send(
+        'service_y6o5cfq', // Replace with your EmailJS service ID
+        'template_1gf6ff4', // Replace with your EmailJS template ID
+        { to_name: name, to_email: email, message }, // Email parameters
+        'ts1AVmGdpwZ0Dlcvl' // Replace with your EmailJS public key
+      )
+      .then(() => {
+        alert(`Invitation sent to ${email}!`);
+        setEmail('');
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error.text);
+        alert('Failed to send invitation. Please try again later.');
+      });
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>🎉 Hello there! 🎉</h1>
-        <p>I have a very important message to share</p>
+        <h1>🎉 You're Invited! 🎉</h1>
+        <p>We're getting married on May 3rd, and we'd love for you to join us!</p>
 
         {/* Name Input Form */}
         <form onSubmit={handleNameSubmit}>
@@ -78,7 +90,7 @@ const HomePage = () => {
 
         {/* Email Invitation Form */}
         {showEmailForm && (
-          <form className='invite' onSubmit={handleEmailSubmit}>
+          <form onSubmit={handleEmailSubmit}>
             <label>
               Enter your email to receive an invitation:
               <input
@@ -90,15 +102,6 @@ const HomePage = () => {
             </label>
             <button type="submit">Send Invitation</button>
           </form>
-        )}
-
-        {/* Conditionally Render "View Our Journey" Link */}
-        {showMessage && (
-          <p>
-            <Link to="/journey" className="view-journey-link">
-              View Our Journey
-            </Link>
-          </p>
         )}
       </header>
     </div>

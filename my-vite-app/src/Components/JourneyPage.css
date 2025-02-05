@@ -1,107 +1,212 @@
 /* General Styles */
 .JourneyPage {
-    font-family: 'Georgia', serif;
-    background-color: #f7f3e9; /* Soft cream background */
-    color: #333;
-    padding: 40px 20px;
-  }
+  font-family: 'Georgia', serif;
+  background-color: #f7f3e9; /* Soft cream background */
+  color: #333;
+  padding: 40px 20px;
+}
+
+.JourneyPage-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.JourneyPage-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #b88c6e; /* Warm gold color */
+}
+
+.JourneyPage-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Timeline Header */
+.timeline-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.timeline-header h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #b88c6e; /* Warm gold color */
+}
+
+/* Timeline Wrapper (For Non-Centered Items) */
+.timeline-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Timeline Line (Ends Before the Last Image) */
+.timeline-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #dcb9a4; /* Gold line */
+  height: calc(100% - 100px); /* Adjust height to end before the last image */
+}
+
+/* Timeline Items */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 4px 1fr; /* Text | Line | Image */
+  align-items: center;
+  gap: 20px; /* Space between text and image */
+  margin-bottom: 40px;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateY(50px); /* Initial position below the viewport */
+  transition: all 0.6s ease; /* Smooth transition */
+}
+
+/* Left-Aligned Items */
+.timeline-item.left .timeline-text-container.left {
+  grid-column: 1 / 2; /* Place text on the left */
+}
+
+.timeline-item.left .timeline-image-container.right {
+  grid-column: 3 / 4; /* Place image on the right */
+}
+
+/* Right-Aligned Items */
+.timeline-item.right .timeline-text-container.right {
+  grid-column: 3 / 4; /* Place text on the right */
+}
+
+.timeline-item.right .timeline-image-container.left {
+  grid-column: 1 / 2; /* Place image on the left */
+}
+.timeline-image-container.left {
+  background-color: red;
+  margin-top: -220px;
+}
+/* Centered Item (Outside the Timeline Wrapper) */
+.timeline-item.centered .timeline-text-container.centered {
+  grid-column: 1 / -1; 
   
-  .JourneyPage-header {
-    text-align: center;
-    margin-bottom: 40px;
+  /* Span full width */
+  text-align: center;
+}
+
+.timeline-item.centered .timeline-image-container.centered {
+  grid-column: 1 / -1; /* Span full width */
+  justify-self: center;
+}
+
+/* Text Container */
+.timeline-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-text {
+  background: #fffaf2; /* Soft ivory background */
+  border: 2px solid #dcb9a4; /* Gold border */
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  /* max-width: 400px;  */
+}
+
+.timeline-text h2 {
+  font-size: 1.5rem;
+  color: #b88c6e; /* Warm gold color */
+  margin-bottom: 10px;
+}
+
+.timeline-text p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Image Container */
+.timeline-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-image {
+  width: 200px; /* Fixed width for images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for images */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Hide the timeline line on smaller screens */
+  .timeline-wrapper::after {
+    display: none;
   }
-  
-  .JourneyPage-header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #b88c6e; /* Warm gold color */
-  }
-  
-  .JourneyPage-header p {
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
-  /* Timeline Styles */
-  .timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Timeline Line */
-  .timeline::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 4px;
-    background-color: #dcb9a4; /* Gold line */
-  }
-  
-  /* Timeline Item */
+
+  /* Stack text and image in a column */
   .timeline-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-    position: relative;
+    grid-template-columns: 1fr; /* Single column layout */
+    text-align: center;
   }
-  
-  /* Text Container */
+
+  /* Text Container (Stacked Above Image) */
   .timeline-text-container {
-    flex: 1; /* Allow text to take up available space */
-    margin-right: 20px; /* Space between text and line */
+    margin-bottom: 20px; /* Add spacing between text and image */
   }
-  
-  .timeline-text {
-    background: #fffaf2; /* Soft ivory background */
-    border: 2px solid #dcb9a4; /* Gold border */
-    border-radius: 15px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-    padding: 20px;
-  }
-  
-  .timeline-text h2 {
-    font-size: 1.5rem;
-    color: #b88c6e; /* Warm gold color */
-    margin-bottom: 10px;
-  }
-  
-  .timeline-text p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  /* Image Container */
-  .timeline-image-container {
-    flex: 0 0 200px; /* Fixed width for image container */
-    margin-left: 20px; /* Space between line and image */
-  }
-  
+
+  /* Image Size Adjustment */
   .timeline-image {
-    width: 100%; /* Full width within the container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Rounded corners for images */
+    width: 150px; /* Reduce image size for smaller screens */
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .timeline-item {
-      flex-direction: column; /* Stack text and image vertically */
-      align-items: center;
-      text-align: center;
-    }
-  
-    .timeline-text-container {
-      margin-bottom: 20px; /* Add spacing between text and image */
-    }
-  
-    .timeline-image-container {
-      margin-left: 0; /* Remove horizontal spacing on smaller screens */
-    }
-  
-    .timeline-image {
-      width: 150px; /* Reduce image size for smaller screens */
-    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Hide the timeline line on smaller screens */
+  .timeline-wrapper::after {
+    display: none;
   }
+
+  /* Stack text and image in a column */
+  .timeline-item {
+    grid-template-columns: 1fr; /* Single column layout */
+    text-align: center;
+  }
+
+  /* .timeline-text-container {
+
+  } */
+
+  /* Adjust Image Size */
+  .timeline-image {
+    width: 150px; /* Reduce image size for smaller screens */
+  }
+
+  /* Specific Styles for .timeline-image-container.left in Mobile View */
+  .timeline-image-container.left {
+    justify-content: center; /* Center the image horizontally */
+    margin-bottom: 20px; 
+    margin-top: 15px;/* Add space below the image */
+  }
+  .timeline-item{
+    display: flex;
+    flex-direction: column;
+  }
+}
