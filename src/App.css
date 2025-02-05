@@ -1,0 +1,254 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif; 
+  background-color: #f7f3e9;
+  color: #333; 
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f7f3e9;
+}
+
+/* Header Styles */
+.App-header {
+  background: linear-gradient(135deg, #ffffff, #fff4e6); /* Subtle gradient */
+  padding: 40px 80px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.App-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #b88c6e; /* Warm gold color */
+  margin-bottom: 10px;
+}
+
+.App-header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Message Box */
+.message-box {
+  margin-top: 20px;
+  /* padding: 15px; */
+  background: #fffaf2; /* Soft ivory background */
+  border: 2px solid #dcb9a4; /* Gold border */
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 2px solid #dcb9a4; /* Gold border */
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fffaf2; /* Soft ivory background */
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #b88c6e; /* Warm gold on focus */
+  outline: none;
+}
+
+/* Buttons */
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #b88c6e, #dcb9a4); /* Gold gradient */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #dcb9a4, #b88c6e); /* Invert gradient on hover */
+}
+
+/* Form Layout */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Decorative Elements */
+.App-header::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 5px;
+  background: linear-gradient(135deg, #b88c6e, #dcb9a4); /* Gold ribbon effect */
+  border-radius: 5px;
+}
+
+
+.invite{
+  margin-top: 25px;
+}
+
+.message-box{
+  padding: 0 15px;
+}
+.message-box::before {
+  content: "❤️"; /* Heart symbol as a decorative element */
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #b88c6e; /* Warm gold */
+}
+
+
+
+
+
+
+
+
+
+/*Journey page style
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Styles */
+/* General Styles */
+.JourneyPage {
+  font-family: 'Georgia', serif;
+  background-color: #f7f3e9; /* Soft cream background */
+  color: #333;
+  padding: 40px 20px;
+}
+
+.JourneyPage-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.JourneyPage-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #b88c6e; /* Warm gold color */
+}
+
+.JourneyPage-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Timeline Styles */
+.timeline {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.timeline-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fffaf2; /* Soft ivory background */
+  border: 2px solid #dcb9a4; /* Gold border */
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+/* Text Section */
+.timeline-text {
+  flex: 1; /* Allow text to take up available space */
+  margin-right: 20px; /* Space between text and image */
+}
+
+.timeline-text h2 {
+  font-size: 1.5rem;
+  color: #b88c6e; /* Warm gold color */
+  margin-bottom: 10px;
+}
+
+.timeline-text p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Image Section */
+.timeline-image {
+  width: 200px; /* Fixed width for images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for images */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-content {
+    flex-direction: column; /* Stack text and image vertically on smaller screens */
+    align-items: center;
+    text-align: center;
+  }
+
+  .timeline-text {
+    margin-bottom: 20px; /* Add spacing between text and image */
+  }
+
+  .timeline-image {
+    width: 150px; /* Reduce image size for smaller screens */
+  }
+}
