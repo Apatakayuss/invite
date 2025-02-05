@@ -1,7 +1,8 @@
 // src/components/HomePage.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-// import './HomePage.css'; 
+import { Link } from 'react-router-dom';
+import messagesData from '../data/messages.json'; // Import the JSON file
 
 const HomePage = () => {
   const [name, setName] = useState('');
@@ -10,15 +11,12 @@ const HomePage = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [showEmailForm, setShowEmailForm] = useState(false);
 
-  const personalizedMessages = {
-    John: "Dear John, we are thrilled to have you at our special day!",
-    Jane: "Dear Jane, your presence will make our wedding even more memorable!",
-    Alex: "Dear Alex, we can't wait to celebrate with you!",
-    Sarah: "Dear Sarah, thank you for being part of this joyous occasion!",
-  };
-
   const fallbackMessage = (enteredName) =>
     `Dear ${enteredName}, we are excited to share our special day with you!`;
+
+  useEffect(() => {
+    // Optional: Preload messages into memory if needed
+  }, []);
 
   const handleNameSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +27,8 @@ const HomePage = () => {
       return;
     }
 
-    const selectedMessage = personalizedMessages[enteredName] || fallbackMessage(enteredName);
+    // Retrieve the personalized message from the JSON file
+    const selectedMessage = messagesData[enteredName] || fallbackMessage(enteredName);
     setMessage(selectedMessage);
     setShowMessage(true);
     setShowEmailForm(true);
@@ -102,6 +101,15 @@ const HomePage = () => {
             </label>
             <button type="submit">Send Invitation</button>
           </form>
+        )}
+
+        {/* Conditionally Render "View Our Journey" Link */}
+        {showMessage && (
+          <p>
+            <Link to="/journey" className="view-journey-link">
+              View Our Journey
+            </Link>
+          </p>
         )}
       </header>
     </div>

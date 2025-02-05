@@ -11,6 +11,7 @@ body {
   height: 100%;
   align-items: center;
   text-align: center;
+  /* overflow: hidden; */
 }
 
 .App {
