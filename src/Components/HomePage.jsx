@@ -12,7 +12,16 @@ const HomePage = () => {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
   const fallbackMessage = (enteredName) =>
-    `Dear ${enteredName}, we are excited to share our special day with you!`;
+    `Dear ${enteredName},
+With hearts overflowing with love and gratitude, we invite you to be part of the most special moments of our lives. As much as we are excited to embark on this new phase of our lives, we would be more fulfilled and our day more memorable with you gracing us with you presence. We invite you to share in our joy and milestone. \n
+Your presence would be the greatest gift as we come together to celebrate not just our union, but the friendships, laughter, and love that make life truly meaningful.
+
+We hope you will join us for a day filled with love, joy, and cherished memories.!
+  
+  
+  
+  
+`;
 
   useEffect(() => {
     // Optional: Preload messages into memory if needed
