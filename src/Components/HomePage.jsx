@@ -63,13 +63,15 @@ const HomePage = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>🎉 You're Invited! 🎉</h1>
+        <h1>🎉 We have a message to share 🎉</h1>
         <p>We're getting married on May 3rd, and we'd love for you to join us!</p>
 
         {/* Name Input Form */}
         <form onSubmit={handleNameSubmit}>
           <label>
+            <div className='first-name'>
             Enter your first name:
+              </div> 
             <input
               type="text"
               value={name}

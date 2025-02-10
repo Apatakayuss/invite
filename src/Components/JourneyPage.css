@@ -8,7 +8,7 @@
 
 .JourneyPage-header {
   text-align: center;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 .JourneyPage-header h1 {
@@ -83,7 +83,7 @@
   grid-column: 1 / 2; /* Place image on the left */
 }
 .timeline-image-container.left {
-  background-color: red;
+  /* background-color: red; */
   margin-top: -220px;
 }
 /* Centered Item (Outside the Timeline Wrapper) */
@@ -111,14 +111,15 @@
   border: 2px solid #dcb9a4; /* Gold border */
   border-radius: 15px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-  padding: 20px;
+  padding: 10px;
   /* max-width: 400px;  */
 }
 
 .timeline-text h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #b88c6e; /* Warm gold color */
-  margin-bottom: 10px;
+  margin: 0;
+  /* margin-bottom: 10px; */
 }
 
 .timeline-text p {

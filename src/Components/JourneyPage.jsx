@@ -6,20 +6,23 @@ import './JourneyPage.css'; // Import custom styles
 
 // Import local images
 import Azeez from '../assets/azeez.jpeg';
+import First from '../assets/first-text.jpeg'
+import Date from '../assets/date.jpeg'
+
 
 const JourneyPage = () => {
   const timelineItems = [
     {
       title: "How We Met",
       description:
-        "It all started on a sunny afternoon when we bumped into each other at a coffee shop. Love was in the air!",
-      image: Azeez,
+        "It all started with a Snapchat text! December 8th 2021, we shared our first text, kicked off as acquintance then proceeded to knowing each other",
+      image: First,
     },
     {
       title: "First Date",
       description:
-        "Our first date was unforgettable. We went to a cozy Italian restaurant and laughed the night away.",
-      image: Azeez,
+        "Couple of weeks after we shared our first text, we decided to mwwt physically, this meeting gave us he confirmation and assurance we needed. A couple weeks after, we had oour first date then we decided to kick it off from then.",
+      image: Date,
     },
     {
       title: "First Date",
