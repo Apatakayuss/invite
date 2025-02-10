@@ -154,6 +154,8 @@ label {
   color: #b88c6e; /* Warm gold */
 }
 
-
+input:focus{
+  color: black;
+}
 
 
