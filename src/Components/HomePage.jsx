@@ -1,8 +1,7 @@
-// src/components/HomePage.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
-import messagesData from '../data/messages.json'; // Import the JSON file
+import messagesData from '../data/messages.json';
 
 const HomePage = () => {
   const [name, setName] = useState('');
@@ -13,19 +12,10 @@ const HomePage = () => {
 
   const fallbackMessage = (enteredName) =>
     `Dear ${enteredName},
-With hearts overflowing with love and gratitude, we invite you to be part of the most special moments of our lives. As much as we are excited to embark on this new phase of our lives, we would be more fulfilled and our day more memorable with you gracing us with you presence. We invite you to share in our joy and milestone. \n
-Your presence would be the greatest gift as we come together to celebrate not just our union, but the friendships, laughter, and love that make life truly meaningful.
 
-We hope you will join us for a day filled with love, joy, and cherished memories.!
-  
-  
-  
-  
-`;
+With hearts overflowing with love and gratitude, we invite you to be part of the most special moments of our lives. Your presence would be the greatest gift as we come together to celebrate not just our union, but the friendships, laughter, and love that make life truly meaningful.
 
-  useEffect(() => {
-    // Optional: Preload messages into memory if needed
-  }, []);
+We hope you will join us for a day filled with love, joy, and cherished memories!`;
 
   const handleNameSubmit = (e) => {
     e.preventDefault();
@@ -36,7 +26,6 @@ We hope you will join us for a day filled with love, joy, and cherished memories
       return;
     }
 
-    // Retrieve the personalized message from the JSON file
     const selectedMessage = messagesData[enteredName] || fallbackMessage(enteredName);
     setMessage(selectedMessage);
     setShowMessage(true);
@@ -51,12 +40,17 @@ We hope you will join us for a day filled with love, joy, and cherished memories
       return;
     }
 
-    // Send email using EmailJS
+    const emailParams = {
+      to_name: name,
+      to_email: email,
+      message: message,
+    };
+
     emailjs
       .send(
         'service_y6o5cfq', // Replace with your EmailJS service ID
         'template_1gf6ff4', // Replace with your EmailJS template ID
-        { to_name: name, to_email: email, message }, // Email parameters
+        emailParams, // Email parameters
         'ts1AVmGdpwZ0Dlcvl' // Replace with your EmailJS public key
       )
       .then(() => {
@@ -75,12 +69,9 @@ We hope you will join us for a day filled with love, joy, and cherished memories
         <h1>🎉 We have a message to share 🎉</h1>
         <p>We're getting married on May 3rd, and we'd love for you to join us!</p>
 
-        {/* Name Input Form */}
         <form onSubmit={handleNameSubmit}>
           <label>
-            <div className='first-name'>
-            Enter your first name:
-              </div> 
+            <div className='first-name'>Enter your first name:</div>
             <input
               type="text"
               value={name}
@@ -91,23 +82,14 @@ We hope you will join us for a day filled with love, joy, and cherished memories
           <button type="submit">Submit</button>
         </form>
 
-        {/* Display Personalized Message */}
-        {/* {showMessage && (
+        {showMessage && (
           <div className="message-box">
-            <p>{message}</p>
+            {message.split('\n').map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}
           </div>
-        )} */}
+        )}
 
-
-{showMessage && (
-  <div className="message-box">
-    {message.split("\n").map((line, index) => (
-      <p key={index}>{line}</p>
-    ))}
-  </div>
-)}
-
-        {/* Email Invitation Form */}
         {showEmailForm && (
           <form onSubmit={handleEmailSubmit}>
             <label>
@@ -123,7 +105,6 @@ We hope you will join us for a day filled with love, joy, and cherished memories
           </form>
         )}
 
-        {/* Conditionally Render "View Our Journey" Link */}
         {showMessage && (
           <p>
             <Link to="/journey" className="view-journey-link">
