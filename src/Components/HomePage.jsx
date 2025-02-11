@@ -92,11 +92,20 @@ We hope you will join us for a day filled with love, joy, and cherished memories
         </form>
 
         {/* Display Personalized Message */}
-        {showMessage && (
+        {/* {showMessage && (
           <div className="message-box">
             <p>{message}</p>
           </div>
-        )}
+        )} */}
+
+
+{showMessage && (
+  <div className="message-box">
+    {message.split("\n").map((line, index) => (
+      <p key={index}>{line}</p>
+    ))}
+  </div>
+)}
 
         {/* Email Invitation Form */}
         {showEmailForm && (
