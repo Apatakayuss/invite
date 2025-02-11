@@ -67,7 +67,7 @@ We hope you will join us for a day filled with love, joy, and cherished memories
     <div className="App">
       <header className="App-header">
         <h1>🎉 We have a message to share 🎉</h1>
-        <p>We're getting married on May 3rd, and we'd love for you to join us!</p>
+        <p>This has been in the works for a while and we are excited to share this news with you. Grab a seat as we step out of the kitchen to unveil what we have been cooking.</p>
 
         <form onSubmit={handleNameSubmit}>
           <label>
