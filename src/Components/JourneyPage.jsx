@@ -5,7 +5,7 @@ import 'aos/dist/aos.css'; // Import AOS CSS
 import './JourneyPage.css'; // Import custom styles
 
 // Import local images
-import Azeez from '../assets/azeez.jpeg';
+
 import First from '../assets/first-text.jpeg'
 import Date from '../assets/datee.jpeg'
 import Story from '../assets/story.jpeg'
@@ -23,7 +23,7 @@ const JourneyPage = () => {
 
 
     useEffect(() => {
-      window.scrollTo(0, 0); // Scroll to the top when the component mounts
+      window.scrollTo(0, 0); 
     }, []);
 
 
