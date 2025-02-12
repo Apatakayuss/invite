@@ -13,9 +13,7 @@ const HomePage = () => {
   const fallbackMessage = (enteredName) =>
     `Dear ${enteredName},
 
-With hearts overflowing with love and gratitude, we invite you to be part of the most special moments of our lives. Your presence would be the greatest gift as we come together to celebrate not just our union, but the friendships, laughter, and love that make life truly meaningful.
-
-We hope you will join us for a day filled with love, joy, and cherished memories!`;
+With hearts overflowing with love and gratitude, we invite you to be part of the most special moments of our lives. Your presence would be the greatest gift as we come together to celebrate not just our union, but the friendships, laughter, and love that make life truly meaningful.`;
 
   const handleNameSubmit = (e) => {
     e.preventDefault();

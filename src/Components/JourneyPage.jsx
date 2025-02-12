@@ -7,10 +7,31 @@ import './JourneyPage.css'; // Import custom styles
 // Import local images
 import Azeez from '../assets/azeez.jpeg';
 import First from '../assets/first-text.jpeg'
-import Date from '../assets/date.jpeg'
-
+import Date from '../assets/datee.jpeg'
+import Story from '../assets/story.jpeg'
+import Family from '../assets/family.jpeg'
+import Wed from '../assets/wed.jpeg'
+import Together from '../assets/together.jpeg'
+import Outside from '../assets/outside.jpeg'
+import OUT from '../assets/out.jpeg'
+import LOVER from '../assets/lover.jpeg'
+import LOVING from '../assets/loving.jpeg'
 
 const JourneyPage = () => {
+
+
+
+
+    useEffect(() => {
+      window.scrollTo(0, 0); // Scroll to the top when the component mounts
+    }, []);
+
+
+
+
+
+
+
   const timelineItems = [
     {
       title: "How We Met",
@@ -25,59 +46,55 @@ const JourneyPage = () => {
       image: Date,
     },
     {
-      title: "First Date",
+      title: "Building",
       description:
-        "Our first date was unforgettable. We went to a cozy Italian restaurant and laughed the night away.",
-      image: Azeez,
+        "As time passed, our love deepened, and so did our understanding of what it meant to truly build a life together. It wasn’t just about the grand moments\n We built trust, patience, and a love that stood strong through every test.",
+      image: Together,
     },
     {
-      title: "First Date",
+      id: "presence",
+      title: "Presence",
       description:
-        "Our first date was unforgettable. We went to a cozy Italian restaurant and laughed the night away.",
-      image: Azeez,
+        "We learned that love isn’t just about finding someone to share the good times with, but having a partner to weather the storms with, knowing that no matter what, we would always have each other..",
+      image: Outside,
     },
     {
-      title: "First Date",
+      title: "Fun Time",
       description:
-        "Our first date was unforgettable. We went to a cozy Italian restaurant and laughed the night away.",
-      image: Azeez,
+        "We tried our best to make memories, we engage in fun activities together to strengthen our bond. A little fun won't kill they say",
+      image: LOVER,
     },
     {
-      title: "First Date",
+      title: "Professional Development",
       description:
-        "Our first date was unforgettable. We went to a cozy Italian restaurant and laughed the night away.",
-      image: Azeez,
+        "We both are very big on career. While we have different careers, we are invested in each others career and keep helping each other get better at what we do.",
+      image: OUT,
     },
     {
-      title: "First Date",
+      title: "Living",
       description:
-        "Our first date was unforgettable. We went to a cozy Italian restaurant and laughed the night away.",
-      image: Azeez,
+        "We did our best to live, to celebrate our milestones and generally revel in the wonders of God in our lives                                                                                                              ",
+      image: LOVING,
     },
     {
-      title: "First Date",
+      title: "Family",
       description:
-        "Our first date was unforgettable. We went to a cozy Italian restaurant and laughed the night away.",
-      image: Azeez,
+        "We were always certain we wanted to forever be in each others life, we have been building together ourselves. To add credibility to it fa,ilies met, we shared love, laughter and made plans for the future",
+      image: Family,
     },
     {
-      title: "Engagement",
+      title: "Civil Wedding",
       description:
-        "The moment he got down on one knee was magical. Surrounded by family and friends, we said yes!",
-      image: Azeez,
+        "Shortly after our families met, we took one of the most of important decision of our lives, we committed to each other by sealing our bond in civil manner",
+      image: Wed,
     },
+  
     {
-      title: "Planning Our Future",
+      title: "Our Wedding",
       description:
-        "Now, as we prepare for our wedding, we're excited to start this new chapter together.",
-      image: Azeez,
-    },
-    {
-      title: "Our Wedding Day",
-      description:
-        "This is the day we've been waiting for! Join us as we celebrate our love and commitment.",
-      image: Azeez,
-      centered: true, // Centered item at the end
+        "Here we are today, looking forward to celebrate this beautiful union with friends and family",
+      image: Story,
+      centered: true, 
     },
   ];
 
@@ -123,7 +140,9 @@ const JourneyPage = () => {
 
                 {/* Image Side */}
                 <div className={`timeline-image-container ${index % 2 === 0 ? 'right' : 'left'}`}>
-                  <img src={item.image} alt={item.title} className="timeline-image" />
+                  <img src={item.image} alt={item.title} className="timeline-image" 
+                   
+                  />
                 </div>
               </div>
             ))}
