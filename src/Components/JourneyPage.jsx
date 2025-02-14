@@ -42,7 +42,7 @@ const JourneyPage = () => {
     {
       title: "First Date",
       description:
-        "Couple of weeks after we shared our first text, we decided to mwwt physically, this meeting gave us he confirmation and assurance we needed. A couple weeks after, we had oour first date then we decided to kick it off from then.",
+        "Couple of weeks after we shared our first text, we decided to meet physically, this meeting gave us the confirmation and assurance we needed. A couple weeks after, we had our first date then we decided to kick it off from then.",
       image: Date,
     },
     {
@@ -79,13 +79,13 @@ const JourneyPage = () => {
     {
       title: "Family",
       description:
-        "We were always certain we wanted to forever be in each others life, we have been building together ourselves. To add credibility to it fa,ilies met, we shared love, laughter and made plans for the future",
+        "We were always certain we wanted to forever be in each others life, we have been building together ourselves. To add credibility to our relationship, families met, we shared love, laughter and made plans for the future",
       image: Family,
     },
     {
       title: "Civil Wedding",
       description:
-        "Shortly after our families met, we took one of the most of important decision of our lives, we committed to each other by sealing our bond in civil manner",
+        "Shortly after our families met, we took one of the most important decision of our lives, we committed to each other by sealing our bond in civil manner",
       image: Wed,
     },
   
