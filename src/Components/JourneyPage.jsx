@@ -8,7 +8,7 @@ import './JourneyPage.css'; // Import custom styles
 
 import First from '../assets/first-text.jpeg'
 import Date from '../assets/datee.jpeg'
-import Story from '../assets/story.jpeg'
+import Story from '../assets/Story.jpeg'
 import Family from '../assets/family.jpeg'
 import Wed from '../assets/wed.jpeg'
 import Together from '../assets/together.jpeg'
