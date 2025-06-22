@@ -115,7 +115,9 @@ We’re getting married, and we can’t wait for you to witness the next chapter
 
         {showMessage && (
           <p>
-            Check your email for invitation details!
+            <a href='https://withjoy.com/GaniyatandAdam'>
+              View Our Wedding Website
+            </a>
           </p> 
 
 
