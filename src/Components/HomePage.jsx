@@ -115,7 +115,7 @@ We’re getting married, and we can’t wait for you to witness the next chapter
 
         {showMessage && (
           <p>
-            Please check yout email for the invitation
+            Check your email for invitation details!
           </p> 
 
 
