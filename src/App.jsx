@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Components/HomePage';
-import JourneyPage from './Components/JourneyPage';
+// import JourneyPage from './Components/JourneyPage';
 // import Navbar from './Components/Navbar';
 import './App.css';
 
@@ -15,7 +15,7 @@ function App() {
       {/* Routes */}
       <Routes>
   <Route path="/" element={<HomePage />} />
-  <Route path="/journey" element={<JourneyPage />} />
+ 
 </Routes>
     </Router>
   );

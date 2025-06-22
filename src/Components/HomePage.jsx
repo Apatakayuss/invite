@@ -13,7 +13,13 @@ const HomePage = () => {
   const fallbackMessage = (enteredName) =>
     `Dear ${enteredName},
 
-With hearts overflowing with love and gratitude, we invite you to be part of the most special moments of our lives. Your presence would be the greatest gift as we come together to celebrate not just our union, but the friendships, laughter, and love that make life truly meaningful.`;
+With immense joy and gratitude, we wholeheartedly invite you to share in our truly special moment as we begin this new chapter. Your presence would be a cherished blessing, and we're praying that Allah guides your steps to join us. We can't wait to celebrate the love, joy, and friendships that make life beautiful with you. ❤️
+
+We look forward to seeing you and making unforgettable memories together.
+
+With love and prayers,
+TheBrain'25 ❤️
+`;
 
   const handleNameSubmit = (e) => {
     e.preventDefault();
@@ -46,10 +52,10 @@ With hearts overflowing with love and gratitude, we invite you to be part of the
 
     emailjs
       .send(
-        'service_y6o5cfq', // Replace with your EmailJS service ID
-        'template_1gf6ff4', // Replace with your EmailJS template ID
-        emailParams, // Email parameters
-        'ts1AVmGdpwZ0Dlcvl' // Replace with your EmailJS public key
+        'service_y6o5cfq', 
+        'template_1gf6ff4', 
+        emailParams, 
+        'ts1AVmGdpwZ0Dlcvl' 
       )
       .then(() => {
         alert(`Invitation sent to ${email}!`);
@@ -64,8 +70,12 @@ With hearts overflowing with love and gratitude, we invite you to be part of the
   return (
     <div className="App">
       <header className="App-header">
-        <h1>🎉 We have a message to share 🎉</h1>
-        <p>This has been in the works for a while and we are excited to share this news with you. Grab a seat as we step out of the kitchen to unveil what we have been cooking.</p>
+        <h1>🎉 TheBrain's 2025 🎉</h1>
+        <p>This has been a beautiful journey in the making, and we’re overjoyed to finally share this special moment with you because you're so special to us.
+
+Grab a seat and hold your heart because Adam & Ganiyat are stepping out of life’s kitchen to serve a love story that’s been simmering with warmth, laughter, joy and deep connection.
+
+We’re getting married, and we can’t wait for you to witness the next chapter of our forever. 💍❤️</p>
 
         <form onSubmit={handleNameSubmit}>
           <label>
@@ -105,10 +115,17 @@ With hearts overflowing with love and gratitude, we invite you to be part of the
 
         {showMessage && (
           <p>
-            <Link to="/journey" className="view-journey-link">
-              View Our Journey
-            </Link>
-          </p>
+            Please check yout email for the invitation
+          </p> 
+
+
+        // <p>
+        //    <Link to="/journey" className="view-journey-link">
+        //      View Our Journey
+        //    </Link>
+        //  </p>
+
+        
         )}
       </header>
     </div>
